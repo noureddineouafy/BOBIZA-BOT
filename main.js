@@ -94,7 +94,7 @@ loadChatgptDB();
 
 /*------------------------------------------------*/
 
-global.authFile = `MysticSession`
+global.authFile = `bobiza`
 const { state, saveState, saveCreds } = await useMultiFileAuthState(global.authFile)
 const msgRetryCounterMap = MessageRetryMap => { }
 let { version } = await fetchLatestBaileysVersion();
@@ -113,7 +113,7 @@ return { conversation: "hello, i'm BrunoSobrino" }},
 msgRetryCounterMap,
 logger: pino({ level: 'silent' }),
 auth: state,
-browser: ['MysticBot','Safari','9.7.0'],
+browser: ['bobiza','Safari','9.7.0'],
 version   
 }
 
@@ -157,13 +157,13 @@ return filename.map(file => {
 
 function purgeSession() {
     let prekey = []
-    let directorio = readdirSync("./MysticSession")
+    let directorio = readdirSync("./bobiza")
     let filesFolderPreKeys = directorio.filter(file => {
         return file.startsWith('pre-key-')
     })
     prekey = [...prekey, ...filesFolderPreKeys]
     filesFolderPreKeys.forEach(files => {
-    unlinkSync(`./MysticSession/${files}`)
+    unlinkSync(`./bobiza/${files}`)
 })
 
 }  
@@ -186,7 +186,7 @@ listaDirectorios.forEach(filesInDir => {
 }
 
 function purgeOldFiles() {
-const directories = ['./MysticSession/', './jadibts/']
+const directories = ['./bobiza/', './jadibts/']
 const oneHourAgo = Date.now() - (60 * 60 * 1000) 
 directories.forEach(dir => {
     readdirSync(dir, (err, files) => {
@@ -220,10 +220,10 @@ global.timestamp.connect = new Date
 }
 if (global.db.data == null) loadDatabase()
 if (update.qr != 0 && update.qr != undefined) {
-console.log(chalk.yellow('🚩ㅤEscanea este codigo QR, el codigo QR expira en 60 segundos.'))
+console.log(chalk.yellow('🚩scan the qr code .'))
 }
 if (connection == 'open') {
-console.log(chalk.yellow('▣──────────────────────────────···\n│\n│❧ 𝙲𝙾𝙽𝙴𝙲𝚃𝙰𝙳𝙾 𝙲𝙾𝚁𝚁𝙴𝙲𝚃𝙰𝙼𝙴𝙽𝚃𝙴 𝙰𝙻 𝚆𝙷𝙰𝚃𝚂𝙰𝙿𝙿 ✅\n│\n▣──────────────────────────────···'))}
+console.log(chalk.yellow('▣──────────────────────────────···\n│\n│❧ connected to whatsapp𝙿 ✅\n│\n▣──────────────────────────────···'))}
 if (connection == 'close') {
 console.log(chalk.yellow(`🚩ㅤConexion cerrada, por favor borre la carpeta ${global.authFile} y reescanee el codigo QR`))}
 }
@@ -418,5 +418,5 @@ let m = isNaN(ms) ? '--' : Math.floor(ms / 60000) % 60
 let s = isNaN(ms) ? '--' : Math.floor(ms / 1000) % 60
 return [d, ' Día(s) ️', h, ' Hora(s) ', m, ' Minuto(s) ', s, ' Segundo(s) '].map(v => v.toString().padStart(2, 0)).join('')}
 _quickTest()
-.then(() => conn.logger.info(`Ƈᴀʀɢᴀɴᴅᴏ．．．\n`))
+.then(() => conn.logger.info(`bobiza．．．\n`))
 .catch(console.error)
