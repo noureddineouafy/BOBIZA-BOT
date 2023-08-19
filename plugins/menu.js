@@ -99,6 +99,7 @@ let handler = async (m, { conn, usedPrefix, usedPrefix: _p, __dirname, text, isP
 .quotlyimgv3
 .hd
 .pdf
+.logo1
 .removebg
 .rg
 .hanan
