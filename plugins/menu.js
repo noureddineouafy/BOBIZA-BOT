@@ -35,7 +35,7 @@ let handler = async (m, { conn, usedPrefix, usedPrefix: _p, __dirname, text, isP
 .hespress
 .technews
 .whabetainfo
-
+.alwadifa
 ╚════▣◎▣════╝
 
 📹 قسم الفيديوات
